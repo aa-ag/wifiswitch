@@ -13,7 +13,13 @@ def enable_wifi_service():
         ["sudo", "networksetup", "-setnetworkserviceenabled", "Wi-Fi", "on"])
 
 
+def turn_airplane_mode_off():
+    subprocess.run(
+        ["sudo", "networksetup", "-setairportpower", "airport", "off"])
+
+
 ###--- DRIVER CODE ---###
 if __name__ == "__main__":
-    disable_wifi_service()
+    # disable_wifi_service()
     # enable_wifi_service()
+    turn_airplane_mode_off()
