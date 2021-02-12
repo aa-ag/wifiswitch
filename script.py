@@ -29,9 +29,14 @@ def turn_airplane_mode_on():
         ["sudo", "networksetup", "-setairportpower", "airport", "on"])
 
 
+def disable_wifi_and_ethernet():
+    subprocess.run(["sudo", "networksetup", "-setv6off", "Wi-Fi"])
+
+
 ###--- DRIVER CODE ---###
 if __name__ == "__main__":
     # disable_wifi_service()
     # enable_wifi_service()
     # turn_airplane_mode_off()
-    turn_airplane_mode_on()
+    # turn_airplane_mode_on()
+    disable_wifi_and_ethernet()
