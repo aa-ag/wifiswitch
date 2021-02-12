@@ -33,10 +33,15 @@ def disable_wifi_and_ethernet():
     subprocess.run(["sudo", "networksetup", "-setv6off", "Wi-Fi"])
 
 
+def enable_wifi_and_ethernet():
+    subprocess.run(["sudo", "networksetup", "-setv6automatic", "Wi-Fi"])
+
+
 ###--- DRIVER CODE ---###
 if __name__ == "__main__":
     # disable_wifi_service()
     # enable_wifi_service()
     # turn_airplane_mode_off()
     # turn_airplane_mode_on()
-    disable_wifi_and_ethernet()
+    # disable_wifi_and_ethernet()
+    enable_wifi_and_ethernet()
